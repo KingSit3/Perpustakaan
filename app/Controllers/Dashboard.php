@@ -72,15 +72,18 @@ class Dashboard extends BaseController
 		
 		// Get Tahun ini
 		$tahun = $this->time->getYear();
-
 		$i = 1; 
 		while($i < 13 )
 		{ 										//Hitung denda 
 			$query = $this->dendaModel->query("	SELECT SUM(denda) AS denda
 												-- Dari tabel denda
 												FROM denda 
+												-- Dimana status = 1 (sudah dibayar)
+												WHERE status = 1
 												-- Berdasarkan bulan & tahun yang ditentukan 
-												WHERE MONTH(updated_at) = '$i' AND YEAR(updated_at) = '$tahun'
+												AND YEAR(updated_at) = '$tahun'
+												AND MONTH(updated_at) = '$i'
+
 											  ");
 			$dataDenda[] = $query->getRowArray();
 			$i++;
