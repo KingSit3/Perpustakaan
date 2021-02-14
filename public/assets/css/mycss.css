@@ -1,0 +1,30 @@
+.image{
+    height: 50px;
+}
+
+.table>tbody>tr *{
+    vertical-align: middle;
+}
+.judul {
+    width: 600px;
+    overflow: hidden;
+}
+
+#coverName{
+    overflow: hidden;
+}
+
+.image-detail{
+    object-fit: scale-down;
+    height: 200px;
+}
+
+.judul_peminjaman{
+    width: 430px;
+    overflow-wrap: normal;
+}
+
+.Peminjaman_nama{
+    width: 190px;
+    overflow-wrap: normal;
+}
